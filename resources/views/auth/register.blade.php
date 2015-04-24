@@ -1,65 +1,66 @@
-@extends('app')
+@extends('layout.auth')
+
+@section('title', 'Conpeo • Register')
 
 @section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Register</div>
-				<div class="panel-body">
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
 
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+	<div id="slick-top"></div>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Name</label>
-							<div class="col-md-6">
-								<input type="text" class="form-control" name="name" value="{{ old('name') }}">
-							</div>
-						</div>
+	<div id="register-wrapper">
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
+		<a href="{{ URL::route('home_path') }}"><i class="fa fa-chevron-left"></i></a>
+		
+		<span class="header1">Register</span>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
-							</div>
-						</div>
+		{!! Form::open(['route' => 'register_path']) !!}
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Confirm Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password_confirmation">
-							</div>
-						</div>
 
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">
-									Register
-								</button>
-							</div>
-						</div>
-					</form>
-				</div>
+			<div class="form-group">
+			{!! Form::label('first_name', 'First name', ['class' => 'form-label']) !!}<br>
+			{!! Form::text('first_name', null, ['class' => 'form-input', 'required', 'placeholder' => 'Please enter your first name...']) !!}<br>
 			</div>
-		</div>
+	
+			<div class="form-group">
+			{!! Form::label('last_name', 'Last name', ['class' => 'form-label']) !!}<br>
+			{!! Form::text('last_name', null, ['class' => 'form-input', 'required', 'placeholder' => 'Please enter your last name...']) !!}<br>			
+			</div>
+
+			<div class="form-group">
+			{!! Form::label('username', 'Username', ['class' => 'form-label']) !!}<br>
+			{!! Form::text('username', null, ['class' => 'form-input', 'required', 'placeholder' => 'Please enter your username...']) !!}<br>
+			</div>
+
+			<div class="form-group">
+			{!! Form::label('email', 'Email', ['class' => 'form-label']) !!}<br>
+			{!! Form::email('email', null, ['class' => 'form-input', 'required', 'placeholder' => 'Please enter your email...']) !!}<br>
+			</div>
+
+			<div class="form-group">
+			{!! Form::label('password', 'Password', ['class' => 'form-label']) !!}<br>
+			{!! Form::password('password', ['class' => 'form-input', 'required', 'placeholder' => 'Please enter your password...']) !!}<br>
+			</div>
+
+			<div class="form-group">
+			{!! Form::label('password_confirmation', 'Confirm password', ['class' => 'form-label']) !!}<br>
+			{!! Form::password('password_confirmation', ['class' => 'form-input', 'required', 'placeholder' => 'Please confirm your password...']) !!}<br>
+			</div>
+
+			{!! Form::submit('Create Account', ['class' => 'form-btn']) !!}
+
+		{!! Form::close() !!}
+
+		@if($errors)
+
+			@foreach($errors->all() as $error)
+
+				{{ $error }}
+
+			@endforeach
+
+		@endif
+
+		<a href="{{ URL::route('login_path') }}" class="return-link">Return to login</a>
+
 	</div>
-</div>
-@endsection
+
+@stop

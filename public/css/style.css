@@ -1,0 +1,152 @@
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+a {
+	text-decoration: none;
+	font-family: 'open sans';
+	font-size: 17px;
+	border: transparent;
+  	border-radius: 2px;
+}
+
+a:active {
+	color: rgb(142, 93, 226);
+}
+
+h1 {
+	font-family: 'open sans';
+	font-size: 60px;
+	margin: 0px;
+	font-weight: 100;
+	color: rgb(60, 60, 60);
+}
+
+h2 {
+	font-family: 'open sans';
+	font-size: 50px;
+	margin: 0px;
+	font-weight: 100;
+	color: rgb(60, 60, 60);	
+}
+
+h3 {
+	font-family: 'open sans';
+	font-size: 40px;
+	margin: 0px;
+	font-weight: 100;
+	color: rgb(60, 60, 60);	
+}
+
+h4 {
+	font-family: 'open sans';
+	font-size: 30px;
+	margin: 0px;
+	font-weight: 100;
+	color: rgb(60, 60, 60);	
+}
+
+h5 {
+	font-family: 'open sans';
+	font-size: 20px;
+	margin: 0px;
+	font-weight: 100;
+	color: rgb(60, 60, 60);	
+}
+
+h6 {
+	font-family: 'open sans';
+	font-size: 10px;
+	margin: 0px;
+	font-weight: 100;
+	color: rgb(60, 60, 60);	
+}
+
+#content {
+	width: 1100px;
+	margin: auto;
+	text-align: center;
+}
+
+
+#main-header {
+	width: 100%;
+	background: #4d317d;
+	height: 40px;
+}
+
+#header-content {
+	width: 1100px;
+	height: 100%;
+	margin: auto;
+}
+
+#brand {
+	background-image: url(../images/brand1.png);
+	height: 26px;
+  	width: 115px;
+  	background-repeat: no-repeat;
+	float: left;
+	margin-top: 7px;
+}
+
+.search-form {
+	padding: 5px 74px 5px 9px;
+ 	border: none;
+  	border-radius: 1px;
+  	font-family: 'open sans';
+  	font-size: 14px;
+}
+
+.search-form:focus {
+	color: rgb(97, 97, 97);
+}
+
+.header-search {
+	margin: 5px 0px 0px 0px;
+	text-align: center;
+}
+
+.nav-left {
+	width: 33%;
+	height: 100%;
+	float: left;
+	margin-left: 5px;
+}
+
+.nav-middle {
+	width: 33%;
+	height: 100%;
+	float: left;
+}
+
+.nav-right {
+	width: 33%;
+	height: 100%;
+	float: left;
+	margin-right: 5px;
+}
+
+.sign-in-link {
+	color: white;
+	margin: 5px 0px 0px 0px;
+	display: block;
+	float: right;
+	padding: 2px 7px 3px 8px;
+	border: 1px solid transparent;
+	border-radius: 2px;
+	-webkit-transition-duration: 0.1s;
+}
+
+.sign-in-link:hover {
+	border: 1px solid white;
+ 	border-radius: 2px;
+}
+
+#welcome-about {
+	width: 100%;
+  	background: rgb(240, 240, 240);
+  	height: 500px;
+  	border-bottom: 1px solid rgb(224, 224, 224);
+}

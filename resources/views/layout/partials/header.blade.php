@@ -1,36 +1,41 @@
-<nav class="navbar navbar-default">
+<div id="main-header">
+	
+	<div id="header-content">
 
-  <div class="container">
 
-    <div class="row">
-    	
-		<div class="col-md-4">
-			
-			<a href="#" class="navbar-brand">Conpeo</a>
+		<div class="nav-left">
+		
+			<a href="{{ URL::route('home_path') }}"><div id="brand"></div></a>
+	
+		</div>
+
+
+		<div class="nav-middle">
+
+			@if(Auth::check())
+
+			<div class="header-search">{!! Form::text('search', null, ['class' => 'search-form', 'placeholder' => 'Search for people..']) !!}</div>
+
+			@endif
 
 		</div>
 
-		<div class="col-md-4">
+		<div class="nav-right">
+
+			@if(Auth::check())
+
+			<a href="#" class="sign-in-link">Username</a>
+
+			@else
+
+			<a href="{{ URL::route('login_path') }}" class="sign-in-link">Sign in</a>
+
+			@endif
+			 
 			
-			{!! Form::open(['class' => 'navbar-form navbar-left']) !!}
-
-				<div class="input-group">
-					
-					<div class="col-md-12">
-				
-						{!! Form::text('search', null, ['class' => 'form-control', 'placeholder' => 'Search..']) !!}
-						<span class="input-group-btn">{!! Form::submit('Submit', ['class' => 'btn btn-default']) !!}</span>
-				
-					</div>
-				
-				</div>
-
-			{!! Form::close() !!}
-
 		</div>
 
-    </div>
 
-  </div>
+	</div>
 
-</nav>
+</div>
