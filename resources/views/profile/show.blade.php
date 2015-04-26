@@ -8,13 +8,15 @@
 
 	
 	<div id="content">
-		<div class="profile_left">
-			<div class="profile_image"></div>
-		</div>
+	
+			<div class="profile_banner"></div>
 
-		<div class="profile_board">
-			
-		</div>
+			<div class="user-info">
+				 
+
+
+			</div>
+
 	</div>
 	
 

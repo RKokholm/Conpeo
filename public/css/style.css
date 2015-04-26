@@ -153,16 +153,21 @@ h6 {
   	border-bottom: 1px solid rgb(224, 224, 224);
 }
 
-.profile_left {
-	width: 200px;
-	min-height: 500px;
+.profile_banner {
+	background: url(../images/banner.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	width: 100%;
+	height: 150px;
+	border-radius: 3px;
+	border: 1px solid rgb(113, 113, 113);
 }
 
-.profile_image {
-	background-image: url(../images/profile.png);
-  	background-size: 75%;
-  	background-repeat: no-repeat;
+.user-info {
   	width: 100%;
-  	height: 160px;
-  	margin: auto;
+  	height: 100px;
+  	background: white;
+  	border-radius: 2px;
+  	margin: 10px 0px;
+  	border: 1px solid rgb(221, 221, 221);
 }
