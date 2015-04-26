@@ -24,7 +24,7 @@
 
 			@if(Auth::check())
 
-			<a href="#" class="sign-in-link">Username</a>
+			<a href="{{ URL::route('logout_path') }}" class="sign-in-link">{{ Auth::user()->first_name }}</a>
 
 			@else
 

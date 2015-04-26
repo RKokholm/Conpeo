@@ -45,9 +45,9 @@ class ProfilesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($user)
 	{
-		$user = Auth::user();
+		$user = User::where('username', '=', $user)->get();
 		return view('profile.show')->with('user', $user);
 	}
 
