@@ -65,10 +65,9 @@ h6 {
 }
 
 #content {
-	width: 1100px;
+	width: 1000px;
 	margin: auto;
 	padding: 20px;
-	box-sizing: border-box;
 }
 
 
@@ -79,9 +78,12 @@ h6 {
 }
 
 #header-content {
-	width: 1100px;
+	max-width: 1000px;
+	width: 100%;
 	height: 100%;
 	margin: auto;
+	box-sizing: border-box;
+  	padding: 0px 20px 0px 20px;
 }
 
 #brand {
@@ -127,7 +129,6 @@ h6 {
 	width: 33%;
 	height: 100%;
 	float: left;
-	margin-right: 5px;
 }
 
 .sign-in-link {
@@ -148,24 +149,24 @@ h6 {
 
 #welcome-about {
 	width: 100%;
-  	background: rgb(240, 240, 240);
+  	background: rgb(250, 250, 250);
   	height: 500px;
   	border-bottom: 1px solid rgb(224, 224, 224);
 }
 
 .profile_banner {
-	background: url(../images/banner.png);
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	width: 100%;
-	height: 150px;
-	border-radius: 1px;
-	border: 1px solid rgb(113, 113, 113);
+  	background: url(../images/banner.png);
+  	background-repeat: no-repeat;
+  	background-size: 100%;
+  	max-width: 1000px;
+  	width: 100%;
+  	border-radius: 1px;
+  	border: 1px solid rgb(205, 205, 205);
 }
 
 .user-info {
   	width: 100%;
-  	height: 100px;
+  	height: 60px;
   	background: white;
   	border-radius: 1px;
   	margin: 10px 0px;
@@ -174,17 +175,182 @@ h6 {
 
 .left-profile-nav {
 	float: left;
-	height: 500px;
+	min-height: 600px;
+	height: 100%;
 	border: 1px solid rgb(221, 221, 221);
 	background: white;
-	width: 250px;
+	width: 22%;
 	margin-right: 10px;
 }
 
 .profile-dashboard {
 	float: left;
 	height: 500px;
+	width: 100%;
+	max-width: 768px;
+}
+
+.post {
 	border: 1px solid rgb(221, 221, 221);
 	background: white;
-	width: 796px;
+	width: 100%;
+	height: 100%;
+	max-height: 120px;
+	padding: 10px;
+	box-sizing: border-box;
+	margin: 0px 0px 10px 0px;
+}
+
+.new-post {
+  	width: 100%;
+  	max-width: 400px;
+  	display: block;
+  	height: 107px;
+  	font-family: 'open sans';
+  	font-size: 13px;
+  	padding: 9px;
+  	box-sizing: border-box;
+  	color: rgb(100, 100, 100);
+  	border: 1px solid rgb(208, 208, 208);
+  	resize: none;
+}
+
+.new-post-submit {
+	height: 29px;
+  	max-width: 400px;
+  	width: 100%;
+  	margin-top: 4px;
+  	background: rgb(77, 49, 125);
+  	border: 1px solid rgb(49, 30, 82);
+  	color: white;
+  	font-family: 'open sans';
+  	font-size: 13px;
+}
+
+.new-post-submit:hover {
+	background: rgb(88, 58, 139);
+	cursor: pointer;
+}
+
+.user-info-divide {
+	float: left;
+	width: 25%;
+	height: 100%;
+	box-sizing: border-box;
+	border-right: 1px solid rgb(221, 221, 221);
+	padding: 20px;
+	text-align: center;
+	color: rgb(86, 86, 86);
+	font-family: 'open sans';
+  	font-size: 15px;
+}
+
+.user-info-divide:hover {
+	background: rgb(247, 247, 247);
+}
+
+.noborder {
+	border: none;
+}
+
+.profile-icon {
+	margin: 0px 7px 0px 0px;
+}
+
+/* Media queries
+-------------------------------------------------------------------------------*/
+
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (max-width: 1020px) {
+/* Styles */
+
+#content {
+	max-width: 1000px;
+	width: 100%;
+	margin: auto;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.profile-dashboard {
+	float: left;
+	height: 500px;
+	width: 100%;
+	max-width: 1100px;
+}
+
+.left-profile-nav {
+	float: none;
+	min-height: 130px;
+	height: 100%;
+	border: 1px solid rgb(221, 221, 221);
+	background: white;
+	max-width: 1000px;
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+
+.post {
+	max-width: 1000px;
+	width: 100%;
+	height: 100%;
+	max-height: 120px;
+	padding: 10px;
+	box-sizing: border-box;
+	margin: 0px 0px 10px 0px;
+}
+
+
+} /* END media only screen and (max-width: 1024px) */
+
+/* Large screen mobiles */
+@media only screen and (max-width: 800px) {
+/* Styles */
+
+.profile_banner {
+	display: none;
+}
+
+.user-info {
+	margin: 0px;
+}
+
+
+} /* END media only screen and (max-width: 767px)
+
+
+/* Large screen mobiles */
+@media only screen and (max-width: 767px) {
+/* Styles */
+
+.user-info {
+  	width: 100%;
+  	height: 120px;
+}
+
+.user-info-divide {
+	float: left;
+	width: 50%;
+	height: 50%;
+	border: none;
+}
+
+} /* END media only screen and (max-width: 767px)
+
+/* iPhones and other mobiles*/
+@media only screen and (max-width: 480px) {
+
+
+			
+} /* END media only screen and (max-width: 480px)
+
+
+/* Print styles
+-------------------------------------------------------------------------------*/
+@media print {
+
+
 }
