@@ -17,6 +17,14 @@
 
 			</div>
 
+			<div class="left-profile-nav">
+				
+			</div>
+
+			<div class="profile-dashboard">
+
+			</div>
+
 	</div>
 	
 
