@@ -22,13 +22,15 @@
 
 		<div class="nav-right">
 
+			<i class="fa fa-bars"></i>
+
 			@if(Auth::check())
 
-			<a href="{{ URL::route('logout_path') }}" class="sign-in-link">{{ Auth::user()->first_name }}</a>
+			<a href="{{ URL::route('logout_path') }}" class="sign-in-link nav-right-link">{{ Auth::user()->first_name }}</a>
 
 			@else
 
-			<a href="{{ URL::route('login_path') }}" class="sign-in-link">Sign in</a>
+			<a href="{{ URL::route('login_path') }}" class="sign-in-link nav-right-link">Sign in</a>
 
 			@endif
 			 
