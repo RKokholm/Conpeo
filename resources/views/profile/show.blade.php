@@ -29,6 +29,26 @@
 			</div>
 
 			<div class="left-profile-nav">
+
+				<div class="top-area">
+					
+					<div class="profile-picture"></div>
+
+				</div>
+
+				<div class="facts-area">
+					
+					<span class="name">{{ $key->first_name .' '. $key->last_name }}</span>
+
+					<ul>
+						<li>Member since: <span class="fact-variable">{{ $key->created_at->format('jS M, Y') }}</span></li>
+						<li>Age: <span class="fact-variable">17</span></li>
+						<li>Sex: <span class="fact-variable">Male</span></li>
+						<li>Location: <span class="fact-variable">Odense, Denmark</span></li>
+					</ul>
+					
+
+				</div>
 				
 			</div>
 

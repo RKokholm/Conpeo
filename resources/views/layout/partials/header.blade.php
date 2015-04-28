@@ -5,7 +5,7 @@
 
 		<div class="nav-left">
 		
-			<a href="{{ URL::route('home_path') }}"><div id="brand"></div></a>
+			<a href="{{ URL::route('home_path') }}"><div id="brand">Conpeo</div></a>
 	
 		</div>
 
@@ -22,11 +22,12 @@
 
 		<div class="nav-right">
 
-			<i class="fa fa-bars"></i>
-
 			@if(Auth::check())
 
-			<a href="{{ URL::route('logout_path') }}" class="sign-in-link nav-right-link">{{ Auth::user()->first_name }}</a>
+			<i class="fa fa-chevron-down"></i>		
+	
+			<a href="{{ URL::route('profile_path', Auth::user()->username) }}" class="sign-in-link nav-right-link">{{ Auth::user()->first_name }}</a>
+
 
 			@else
 
@@ -37,7 +38,18 @@
 			
 		</div>
 
-
 	</div>
 
 </div>
+
+		<nav class="collapsed-nav">
+			
+			<ul>
+				<li>{!! Form::text('search', null, ['class' => 'collapsed-search-form', 'placeholder' => 'Search for people..']) !!}</li>
+				<a href="#"><li>Link</li></a>
+				<a href="#"><li>Link</li></a>
+				<a href="#"><li>Link</li></a>
+				<a href="#"><li>Link</li></a>
+			</ul>
+
+		</nav>

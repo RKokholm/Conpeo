@@ -2,6 +2,7 @@ body {
 	margin: 0px;
 	padding: 0px;
 	background-color: rgb(240, 240, 240);
+	min-height: 1000px;
 }
 
 a {
@@ -68,6 +69,7 @@ h6 {
 	width: 1000px;
 	margin: auto;
 	padding: 20px;
+	box-sizing: border-box;
 }
 
 
@@ -87,12 +89,11 @@ h6 {
 }
 
 #brand {
-	background-image: url(../images/brand1.png);
-	height: 26px;
-  	width: 115px;
-  	background-repeat: no-repeat;
-	float: left;
-	margin-top: 7px;
+  color: white;
+  font-family: 'Source sans pro';
+  font-size: 21px;
+  margin: 5px 0px 0px 0px;
+  letter-spacing: 0.01em;
 }
 
 .search-form {
@@ -150,7 +151,7 @@ h6 {
 #welcome-about {
 	width: 100%;
   	background: rgb(250, 250, 250);
-  	height: 500px;
+  	height: 80vh;
   	border-bottom: 1px solid rgb(224, 224, 224);
 }
 
@@ -187,7 +188,7 @@ h6 {
 	float: left;
 	height: 500px;
 	width: 100%;
-	max-width: 750px;
+	max-width: 710px;
 }
 
 .post {
@@ -255,19 +256,101 @@ h6 {
 	margin: 0px 7px 0px 0px;
 }
 
-.fa.fa-bars {
+.fa.fa-chevron-down {
 	display: none;
 	float: right;
 	color: white;
-  	margin: 7px 16px;
-  	font-size: 26px;
+	margin: 10px 15px;
+  	font-size: 17px;
 }
 
-.fa.fa-bars:hover {
+.fa.fa-chevron-down:hover {
 	color: rgb(196, 177, 228);
 	cursor: pointer;
 }
 
+.collapsed-nav {
+	position: relative;
+	background: rgb(62, 39, 100);
+	display: none;
+}
+
+.collapsed-nav ul {
+	padding: 0px;
+	margin: 0px;
+}
+
+.collapsed-nav ul a {
+	color: white;
+}
+
+.collapsed-nav ul li {
+	list-style-type: none;
+	padding: 7px 12px;
+	box-sizing: border-box;
+  	list-style-type: none;
+  	border-bottom: 1px solid rgb(50, 32, 81);
+  	width: 100%;
+}
+
+.collapsed-nav ul li:hover {
+	background: rgb(56, 35, 90);
+}
+
+.collapsed-nav ul a li {
+  	list-style-type: none;
+  	border-bottom: 1px solid rgb(50, 32, 81);
+  	width: 100%;
+}
+
+.left-profile-nav .top-area {
+	width: 100%;
+	height: 14em;
+	padding: 20px;
+  	box-sizing: border-box;
+}
+
+.profile-picture {
+	width: 100%;
+	height: 100%;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAMFBMVEX////F2t3B19vT4+XP4OPF2d36/PzJ3N/a5+n0+Pjs8/Tx9vbL3eDh7O3V5Obp8fIrSdt3AAAFTklEQVR4nO2d25qqMAyFbYFSxML7v+0G0VFm0ME2i6zO7n/lpetLmlMDnE6FQqFQKBQKhUKhUCgciuvOY/B+GLwP47lz2v9Hlj4MrTHWmhvzr4s/a/8tIbpQP6StsLYeczel6337Qt5NpPGd9p9MYJb3Rt1dZNVr/9E4XLj8ru7GkKGv9tVueVc7ZmbGzpsd3rmWmFNc7Strmw8FToza/3sv7jP3fLJi0P7r+wjGRNhvofYjfeZw9afn75sdp9xZMduya5P0XWmm/Kit4yVdtH+uoZXoZPQZ2qDjBFz0TkNZ48RmiU0GbTUbjGlR9Dt8aUPuEC54bUE/GIQVNtqCvtPJ+ugUTtnKVC8skC7WSJ/CGW1Na4K0k05uypUSa3GBZAfRyZuQLF8IZ/uFi7aqZ6ST4YK2qmcgApkKN8gxNIZowHiGKGSaLwKy4QxRupAv2WaYEqJo70upsBaaQPEqFBzQPCskijQQgf+DQqJ8iFHIlPFBComqNpBCohYYpFBb1hOQdGhabVlPYPJhrS3rCUxNwzROxNSlTHMaTG/BdIcYEAKZCm/MqI2pLD31EIVERRtmEmWJijZMUcN1b4FIiFZb1ArEzJtLIWScqC1qBSSYaotagbgC5lJ4ugBCjbamNYBQwxVpIAqpMj5EIVPlPZ1DeYUNU48PKr2ZmgvMPT7RqoL4UtsC0aYwZk5DZESQCYmaYNA1vuEZt0EGUTMNi5tCBlFXWCo3zDrNVSHJJKNHCaSpTWGxlCaYQvrfovBYcApJziFQIUksBd2QGp58CGqeZrSV3YGVbTRtPqxso7nKhwwxDFMLDNpkZ5rUYATyJAtYMGVpD0+wLp+lxT+huguiYwiZeRvT8hxDUM4nclJMA0XTWCx4+ZNIU9AsAIzIdApn+phXQ72ksRc2gZPEPS+f24mlWr180IdKKGsEPgPecSJLGSzzp00EHsynKmV+InCVyPqSqBvpK9/kJpQo33ijzJX0PorpUZkt0odS5MdQYChF1VFs0KUKJK1mHqRX4PQKU59jI1vY2yC1MuVXmFq2sSf89NEp2exiA5/YXBDNuV+QXLZpC/iV1KKGbP60QeKCFM32xWsSixqiy5iXpKULfhOm3dLwXPq+JT7WWP4wsxDdBedwCBciLzH4k/2DuGiTxyFciIo2nG8pf0WMEdkHNGti4mlOThq1Q8Tf+n7h+hAVadrKh3MWZ9G8/UbXeztam0FOTGyfMmguUkdRNDulr0h/gIbdiOlXpOTlt8QTQtzTNonHSamNKLIPTT0ylfmCAHGFKrS0T5wThRa/aJ6O/YHYu/dYJ1KSj11QBhvXCm4nUvqp7JdY+JKiE/7UDNkXAru4nvcXqsBxGt04NLAXYxiv/d3u3l/iO/p9Im3t1QoAFxK/q7qbWmVK1fmE7+J+jj/aW89Hme8LWx+4h+KC4F7+BxovB22497jY+atG4/EJZERkvk/AOqsLauZ7YFtY59EN+vKugJx1PDx6vsNWws6qFD3fIRpZu6E5MLfvxkqVAccn9/0IlAGE7rkm0Vn7wXDrm0mIrOrJfT8xzjq1Dvzme2Cbz5zVhUtO8hZsvXce4CbvzE/fjDXVDpFjlam8BWuGt0ey8wSVdSpvCoGeOLV/hq22hld/R9+Mrb/nSMfSGYlh17561v4/AGz75Kq4dx1r0jyWAf+mQPO4acW96Vid5Vm/9Ed3ibmuVufTQUQwP8KBe1c1Bbb72yY083W59j+AUxTmT1GYP0Vh/hSF+VMU5k9RmD9FYf4UhflTFOZPUZg/RWH+FIX5UxTmT1GYP0Vh/hSF+fP3Ff4DEPpuXcIilFkAAAAASUVORK5CYII=');
+	background-size: cover;
+}
+
+.facts-area {
+	width: 100%;
+	height: 14em;
+	padding: 20px;
+  	box-sizing: border-box;
+  	border-top: 1px solid rgb(221, 221, 221);
+}
+
+.facts-area ul {
+	margin: 19px 0px;
+	padding: 0px;
+	font-family: 'open sans';
+	font-size: 14px;
+	color: rgb(116, 116, 116);
+}
+
+.facts-area ul li {
+	list-style-type: none;
+	margin: 17px 0px;
+}
+
+.name {
+	font-family: 'open sans';
+  	font-size: 15px;
+  	letter-spacing: 0.06em;
+  	text-align: center;
+  	display: block;
+  	color: rgb(73, 73, 73);
+}
+
+.fact-variable {
+	font-size: 12px;
+  	margin-left: 13px;
+}
 
 /* Media queries
 -------------------------------------------------------------------------------*/
@@ -295,6 +378,7 @@ h6 {
 .left-profile-nav {
 	float: none;
 	min-height: 130px;
+	max-height: 130px;
 	height: 100%;
 	border: 1px solid rgb(221, 221, 221);
 	background: white;
@@ -315,6 +399,52 @@ h6 {
 	margin: 0px 0px 10px 0px;
 }
 
+.profile-picture {
+	width: 100%;
+	height: 100%;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAMFBMVEX////F2t3B19vT4+XP4OPF2d36/PzJ3N/a5+n0+Pjs8/Tx9vbL3eDh7O3V5Obp8fIrSdt3AAAFTklEQVR4nO2d25qqMAyFbYFSxML7v+0G0VFm0ME2i6zO7n/lpetLmlMDnE6FQqFQKBQKhUKhUCgciuvOY/B+GLwP47lz2v9Hlj4MrTHWmhvzr4s/a/8tIbpQP6StsLYeczel6337Qt5NpPGd9p9MYJb3Rt1dZNVr/9E4XLj8ru7GkKGv9tVueVc7ZmbGzpsd3rmWmFNc7Strmw8FToza/3sv7jP3fLJi0P7r+wjGRNhvofYjfeZw9afn75sdp9xZMduya5P0XWmm/Kit4yVdtH+uoZXoZPQZ2qDjBFz0TkNZ48RmiU0GbTUbjGlR9Dt8aUPuEC54bUE/GIQVNtqCvtPJ+ugUTtnKVC8skC7WSJ/CGW1Na4K0k05uypUSa3GBZAfRyZuQLF8IZ/uFi7aqZ6ST4YK2qmcgApkKN8gxNIZowHiGKGSaLwKy4QxRupAv2WaYEqJo70upsBaaQPEqFBzQPCskijQQgf+DQqJ8iFHIlPFBComqNpBCohYYpFBb1hOQdGhabVlPYPJhrS3rCUxNwzROxNSlTHMaTG/BdIcYEAKZCm/MqI2pLD31EIVERRtmEmWJijZMUcN1b4FIiFZb1ArEzJtLIWScqC1qBSSYaotagbgC5lJ4ugBCjbamNYBQwxVpIAqpMj5EIVPlPZ1DeYUNU48PKr2ZmgvMPT7RqoL4UtsC0aYwZk5DZESQCYmaYNA1vuEZt0EGUTMNi5tCBlFXWCo3zDrNVSHJJKNHCaSpTWGxlCaYQvrfovBYcApJziFQIUksBd2QGp58CGqeZrSV3YGVbTRtPqxso7nKhwwxDFMLDNpkZ5rUYATyJAtYMGVpD0+wLp+lxT+huguiYwiZeRvT8hxDUM4nclJMA0XTWCx4+ZNIU9AsAIzIdApn+phXQ72ksRc2gZPEPS+f24mlWr180IdKKGsEPgPecSJLGSzzp00EHsynKmV+InCVyPqSqBvpK9/kJpQo33ijzJX0PorpUZkt0odS5MdQYChF1VFs0KUKJK1mHqRX4PQKU59jI1vY2yC1MuVXmFq2sSf89NEp2exiA5/YXBDNuV+QXLZpC/iV1KKGbP60QeKCFM32xWsSixqiy5iXpKULfhOm3dLwXPq+JT7WWP4wsxDdBedwCBciLzH4k/2DuGiTxyFciIo2nG8pf0WMEdkHNGti4mlOThq1Q8Tf+n7h+hAVadrKh3MWZ9G8/UbXeztam0FOTGyfMmguUkdRNDulr0h/gIbdiOlXpOTlt8QTQtzTNonHSamNKLIPTT0ylfmCAHGFKrS0T5wThRa/aJ6O/YHYu/dYJ1KSj11QBhvXCm4nUvqp7JdY+JKiE/7UDNkXAru4nvcXqsBxGt04NLAXYxiv/d3u3l/iO/p9Im3t1QoAFxK/q7qbWmVK1fmE7+J+jj/aW89Hme8LWx+4h+KC4F7+BxovB22497jY+atG4/EJZERkvk/AOqsLauZ7YFtY59EN+vKugJx1PDx6vsNWws6qFD3fIRpZu6E5MLfvxkqVAccn9/0IlAGE7rkm0Vn7wXDrm0mIrOrJfT8xzjq1Dvzme2Cbz5zVhUtO8hZsvXce4CbvzE/fjDXVDpFjlam8BWuGt0ey8wSVdSpvCoGeOLV/hq22hld/R9+Mrb/nSMfSGYlh17561v4/AGz75Kq4dx1r0jyWAf+mQPO4acW96Vid5Vm/9Ed3ibmuVufTQUQwP8KBe1c1Bbb72yY083W59j+AUxTmT1GYP0Vh/hSF+VMU5k9RmD9FYf4UhflTFOZPUZg/RWH+FIX5UxTmT1GYP0Vh/hSF+fP3Ff4DEPpuXcIilFkAAAAASUVORK5CYII=');
+	background-size: cover;
+}
+
+.left-profile-nav .top-area {
+	max-height: 130px;
+	min-height: 130px;
+	padding: 10px;
+	float: left;
+	width: 15%;
+	min-width: 138px;
+  	box-sizing: border-box;
+  	float: left;
+}
+
+.facts-area {
+	max-height: 130px;
+  	min-height: 130px;
+  	padding: 10px;
+  	box-sizing: border-box;
+  	float: left;
+  	width: 50%;
+  	min-width: 20%;
+}
+
+.facts-area ul {
+  padding: 0px;
+  font-family: 'open sans';
+  font-size: 14px;
+  color: rgb(116, 116, 116);
+  height: 110px;
+  margin: 0px 0px;
+}
+
+.facts-area ul li {
+  list-style-type: none;
+  margin: 3px 27px;
+  float: left;
+}
+
+.name {
+	display: none;
+}
 
 } /* END media only screen and (max-width: 1024px) */
 
@@ -354,7 +484,7 @@ h6 {
 	display: none;
 }
 
-.fa.fa-bars {
+.fa.fa-chevron-down {
 	display: block;
 }
 
@@ -374,14 +504,40 @@ h6 {
 	border-bottom: 1px solid rgb(221, 221, 221);
 }
 
+.header-search {
+	display: none;
+}
+
+.collapsed-nav {
+	display: none;
+}
+
+.collapsed-search-form {
+	padding: 5px 74px 5px 9px;
+ 	border: none;
+  	border-radius: 1px;
+  	font-family: 'open sans';
+  	font-size: 14px;
+  	width: 60%;
+  	display: block;
+  	margin: auto;
+}
+
+.nav-middle {
+	display: none;
+}
+
+.nav-right {
+	float: right;
+}
 
 
-} /* END media only screen and (max-width: 767px)
+} /* END media only screen and (max-width: 767px) */
 
 /* iPhones and other mobiles*/
 @media only screen and (max-width: 480px) {
 
-
+	
 			
 } /* END media only screen and (max-width: 480px)
 
