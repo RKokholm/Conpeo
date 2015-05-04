@@ -1,44 +1,72 @@
 @extends('layout.main')
 
-@foreach($user as $key)
-
-@section('title', 'Conpeo • '. $key->username)
+@section('title', 'Symfonious • '. $user->username)
 
 @section('content')
 
 	
-	<div id="content">
+	<div class="content">
 	
-			<img src="../images/banner.png" class="profile_banner">
+		<div class="profile-left">
+			
+			<div class="field"></div>
+			<div class="field"></div>
+			<div class="field"></div>
 
-			<div class="user-area">
+		</div>
+
+		<div class="profile-dashboard">
+
+			<div class="banner"></div>
+			<div class="stats">
+
 				
-				<div class="user-area-divide"></div>
-				<div class="user-area-divide"></div>
+				
+				<ul>
+					
+					<li>Friends<br> 
+						<span class="number">122</span>
+					</li>
+
+					<li>Images<br>
+						<span class="number">56</span>
+					</li>
+
+					<li>Thoughts<br>
+						<span class="number">4541</span>
+					</li>
+
+					<li>Unknown<br>
+						<span class="number">654</span>
+					</li>
+
+				</ul>
+
+				<div class="top">
+					
+					<div class="profile-picture"></div>
+
+					<div class="profile-name">
+						
+						{{ $user->first_name }} {{ $user->last_name }}<br>
+
+						<span>{{ $user->username }}</span>
+
+					</div>
+
+				</div>
 
 			</div>
 
-			<div class="user-info">
-				 
-				<div class="user-info-divide border-right border-bottom">
-					<i class="fa fa-table profile-icon"></i>Dashboard
-				</div>
-				<div class="user-info-divide border-bottom">
-					<i class="fa fa-users profile-icon"></i>Friends
-				</div>
-				<div class="user-info-divide border-right">
-					<i class="fa fa-picture-o profile-icon"></i>Images
-				</div>
-				<div class="user-info-divide noborder">
-					<i class="fa fa-info profile-icon"></i>About
-				</div>
+			<div class="posts">
+				
+				
 
 			</div>
 
+		</div>
 
 	</div>
 	
 
 @stop
-
-@endforeach

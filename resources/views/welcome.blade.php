@@ -1,22 +1,38 @@
 @extends('layout.main')
 
-@section('title', 'Conpeo • Home')
+@section('title', 'Symfonious • Home')
 
 @section('content')
 
-	<div id="welcome-about">
 
-		<div id="content">
+	@if(Auth::check())
+
+		<div class="content">
+			
+		</div>
+
+	@else
+
+		<div id="welcome-about">
+
+		<div class="content">
 		
-			<h1>Welcome!</h1><br>
-			<h2>Welcome!</h2><br>
-			<h3>Welcome!</h3><br>
-			<h4>Welcome!</h4><br>
-			<h5>Welcome!</h5><br>
-			<h6>Welcome!</h6><br>	
+			<h1>Welcome!</h1>
+
+			@if($errors)
+
+				@foreach($errors->all() as $error)
+
+					<li>{{ $error }}</li>
+
+				@endforeach
+
+			@endif
 
 		</div>	
 
 	</div>
+
+	@endif
 
 @stop

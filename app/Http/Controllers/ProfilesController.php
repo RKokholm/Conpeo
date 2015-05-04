@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use App\User;
+use Redirect;
 
 class ProfilesController extends Controller {
 
@@ -47,7 +48,14 @@ class ProfilesController extends Controller {
 	 */
 	public function show($user)
 	{
-		$user = User::where('username', '=', $user)->get();
+		
+		$count = User::where('username', '=', $user)->count();
+
+		if($count < 1){
+			return Redirect::route('home_path')->withErrors("User doesn't exist");
+		}
+
+		$user = User::where('username', '=', $user)->first();
 		return view('profile.show')->with('user', $user);
 	}
 

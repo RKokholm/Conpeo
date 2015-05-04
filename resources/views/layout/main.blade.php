@@ -19,7 +19,15 @@
     		});
 		});
 
+		$(document).ready(function(){
+    		$(".sign-in-link").click(function(){
+       			$('.user-nav').fadeToggle(100);
+    		});
+		});
+
 	</script>
+
+
 
 </head>
 <body>

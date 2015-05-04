@@ -5,7 +5,7 @@
 
 		<div class="nav-left">
 		
-			<a href="{{ URL::route('home_path') }}"><div id="brand">Conpeo</div></a>
+			<a href="{{ URL::route('home_path') }}"><div id="brand"><img src="/images/note.png" alt="Symfonious" class="logo">Symfonious</div></a>
 	
 		</div>
 
@@ -26,7 +26,21 @@
 
 			<i class="fa fa-chevron-down"></i>		
 	
-			<a href="{{ URL::route('profile_path', Auth::user()->username) }}" class="sign-in-link nav-right-link">{{ Auth::user()->first_name }}</a>
+			<span class="sign-in-link nav-right-link">{{ Auth::user()->first_name }}</span>
+
+			<nav class="user-nav">
+
+				<ul>
+				
+					<a href="{{ URL::route('profile_path', Auth::user()->username) }}"><li>Profile</li></a>				
+					<a href="#"><li>My groups</li></a>
+					<a href="#"><li>Support</li></a>
+					<a href="#"><li>Settings</li></a>
+					<a href="{{ URL::route('logout_path') }}"><li>Log out</li></a>
+
+				</ul>
+			
+			</nav>
 
 
 			@else
@@ -34,7 +48,6 @@
 			<a href="{{ URL::route('login_path') }}" class="sign-in-link nav-right-link">Sign in</a>
 
 			@endif
-			 
 			
 		</div>
 

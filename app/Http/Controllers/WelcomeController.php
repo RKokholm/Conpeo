@@ -1,5 +1,9 @@
 <?php namespace App\Http\Controllers;
 
+use Validator;
+use Input;
+use Redirect;
+
 class WelcomeController extends Controller {
 
 	/*
@@ -21,6 +25,19 @@ class WelcomeController extends Controller {
 	public function index()
 	{
 		return view('welcome');
+	}
+
+	public function store()
+	{
+		$validator = Validator::make(Input::all(),[
+			'Thought_content' => 'required|max:272|min:3'
+		]);
+
+		if($validator->fails()){
+			return Redirect::back()->withErrors($validator);
+		}
+
+		return 'success!';
 	}
 
 }
