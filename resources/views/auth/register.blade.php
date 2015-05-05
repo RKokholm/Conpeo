@@ -1,6 +1,6 @@
 @extends('layout.auth')
 
-@section('title', 'Conpeo • Register')
+@section('title', 'Symfonious • Register')
 
 @section('content')
 

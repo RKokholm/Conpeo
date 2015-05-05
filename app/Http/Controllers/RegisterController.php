@@ -8,6 +8,7 @@ use Validator;
 use Redirect;
 use Input;
 use App\User;
+use App\Profile;
 
 class RegisterController extends Controller {
 
@@ -42,7 +43,7 @@ class RegisterController extends Controller {
 			'first_name' => 'required|min:3|max:20',
 			'last_name' => 'required|min:3|max:20',
 			'username' => 'required|min:3|max:20|unique:users',
-			'email' => 'required|min:5|max:100|email',
+			'email' => 'required|min:5|max:100|email|unique:users',
 			'password' => 'confirmed|required|min:6|max:60',
 			'password_confirmation' => 'required',
 		]);
@@ -58,6 +59,16 @@ class RegisterController extends Controller {
 			'email' => Input::get('email'),
 			'password' => bcrypt(Input::get('password')),
 		]);
+
+		$profile = new Profile([
+			'facebook' => '',
+			'twitter' => '',
+			'youtube' => '',
+			'bio' => '',
+			'short_about' => 'Write a short text you want to show on your profile',
+		]);
+
+		$user->profile()->save($profile);
 
 		return Redirect::route('home_path');
 	}

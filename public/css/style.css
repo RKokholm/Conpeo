@@ -391,6 +391,8 @@ h6 {
   	margin: 10px 0px 0px -2px;
   	float: left;
   	color: rgb(68, 68, 68);
+    border-right: 1px solid rgb(232, 232, 232);
+  	padding-right: 12px;
 }
 
 .profile-name span {
@@ -401,6 +403,15 @@ h6 {
   	color: rgb(140, 140, 140);
 }
 
+.short-about {
+	font-family: 'open sans';
+  	font-size: 13px;
+  	margin: 12px 11px;
+  	display: block;
+  	float: left;
+  	color: rgb(105, 105, 105);
+  	width: 350px;
+}
 
 /* Media queries
 -------------------------------------------------------------------------------*/

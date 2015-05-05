@@ -54,6 +54,8 @@
 
 					</div>
 
+					<span class="short-about">{{ $user->profile->short_about }}</span>
+
 				</div>
 
 			</div>
