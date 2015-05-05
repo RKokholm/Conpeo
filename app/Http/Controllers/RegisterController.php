@@ -65,12 +65,12 @@ class RegisterController extends Controller {
 			'twitter' => '',
 			'youtube' => '',
 			'bio' => '',
-			'short_about' => 'Write a short text you want to show on your profile',
+			'short' => 'Write a short text to display on your profile..',
 		]);
 
 		$user->profile()->save($profile);
 
-		return Redirect::route('home_path');
+		return Redirect::route('login_path');
 	}
 
 	/**

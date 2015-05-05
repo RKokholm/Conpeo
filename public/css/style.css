@@ -13,10 +13,6 @@ a {
   	border-radius: 2px;
 }
 
-a:active {
-	color: white;
-}
-
 textarea, input { 
 	outline: none; 
 }
@@ -325,7 +321,6 @@ h6 {
 	width: 100%;
 	height: 100%;
 	min-height: 250px;
-	background: white;
 	border-radius: 7px;
 	margin-top: 20px;
 }
@@ -411,6 +406,145 @@ h6 {
   	float: left;
   	color: rgb(105, 105, 105);
   	width: 350px;
+}
+
+.about-area {
+	width: 100%;
+  	background: white;
+  	height: 251px;
+  	margin: 15px 0px 0px 0px;
+  	border-radius: 7px;
+ 	padding: 13px;
+  	box-sizing: border-box;
+}
+
+.section-title {
+  	color: rgb(139, 139, 139);
+  	border-bottom: 1px solid rgb(236, 236, 236);
+  	padding-bottom: 0px 0px 6px 5px;
+}
+
+.edit-profile-btn {
+	float: right;
+  	background: rgb(141, 200, 82);
+  	padding: 5px 10px;
+  	color: white;
+  	font-family: 'open sans';
+  	border-radius: 5px;
+  	margin: 8px;
+  	font-size: 13px;
+  	border: 1px solid rgb(125, 176, 73);
+}
+
+.edit-profile-btn:hover {
+	background: rgb(134, 190, 78);
+}
+
+.fa.fa-cog {
+	margin-right: 5px;
+}
+
+.thought-form {
+  	width: 50%;
+  	margin: 20px auto 50px auto;
+}
+
+.new-thought {
+  	font-family: 'open sans';
+  	padding: 7px;
+ 	border-radius: 5px;
+  	border: 1px solid lightgrey;
+  	resize: none;
+  	height: 90px;
+  	width: 100%;
+  	box-sizing: border-box;
+}
+
+.thought-btn {
+  	float: right;
+  	border: 1px solid rgb(125, 176, 73);
+  	background: rgb(147, 208, 87);
+  	color: white;
+  	padding: 7px 13px;
+  	border-radius: 3px;
+  	margin: 0px 8px;
+}
+
+.thought-btn:hover {
+	background: rgb(144, 202, 86);
+	cursor: pointer;
+}
+
+.thoughts {
+  	width: 50%;
+  	margin: auto;
+	list-style-type: none;
+	box-sizing: border-box;
+	padding: 0px;
+}
+
+.thoughts-profile{
+  	width: 100%;
+  	margin: auto;
+	list-style-type: none;
+	box-sizing: border-box;
+	padding: 0px;
+}
+
+.thoughts-profile li {
+	background: white;
+	box-sizing: border-box;
+	padding: 10px;
+	margin: 25px 0px;
+	border-radius: 5px;
+}
+
+.thoughts li {
+	background: white;
+	box-sizing: border-box;
+	padding: 10px;
+	margin: 25px 0px;
+	border-radius: 5px;
+}
+
+.post-top {
+	width: 100%;
+	overflow: hidden;
+}
+
+.post-top .profile-picture {
+	margin: 0px;
+}
+
+.post-author {
+	font-size: 14px;
+  	margin: 0px 0px 0px 43px;
+  	color: rgb(115, 176, 55);
+  	font-weight: 600;
+  	display: block;
+}
+
+.post-author:hover {
+	text-decoration: underline;
+}
+
+.post-timestamp {
+  	color: rgb(140, 140, 140);
+  	font-family: 'open sans';
+  	font-size: 11px;
+  	display: block;
+  	margin: 0px 0px 0px 42px;
+}
+
+.seperator {
+	width: 100%;
+	height: 1px;
+	background: rgb(239, 239, 239);
+	margin: 8px 0px;
+}
+
+.thought-content {
+	word-wrap: break-word;
 }
 
 /* Media queries

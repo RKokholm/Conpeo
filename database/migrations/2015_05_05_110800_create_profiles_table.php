@@ -20,7 +20,9 @@ class CreateProfilesTable extends Migration {
 			$table->string('twitter');
 			$table->string('bio');
 			$table->string('youtube');
-			$table->string('short-about');
+			$table->string('short');
+			$table->string('location');
+			$table->integer('birth_year');
 			$table->timestamps();
 		});
 	}

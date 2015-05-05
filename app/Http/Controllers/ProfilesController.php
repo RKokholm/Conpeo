@@ -56,7 +56,9 @@ class ProfilesController extends Controller {
 			return Redirect::route('home_path')->withErrors("User doesn't exist");
 		}
 
-		$user = User::with('Profile')->where('username', '=', $user)->first();
+		$user = User::with('Profile')->with(['posts' => function($sql){
+			$sql->orderBy('created_at', 'desc'); 
+		}])->where('username', $user)->first();
 		return view('profile.show')->with('user', $user);
 	}
 
@@ -91,6 +93,12 @@ class ProfilesController extends Controller {
 	public function destroy($id)
 	{
 		//
+	}
+
+	public function about($user)
+	{
+		$user = User::with('Profile')->where('username', $user)->first();
+		return view('profile.about')->with('user', $user);
 	}
 
 }

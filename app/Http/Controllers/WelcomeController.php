@@ -3,6 +3,9 @@
 use Validator;
 use Input;
 use Redirect;
+use App\Post;
+use Auth;
+use App\User;
 
 class WelcomeController extends Controller {
 
@@ -24,7 +27,10 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('welcome');
+		$user = User::with('profile')->with(['posts' => function($sql){
+			$sql->orderBy('created_at', 'desc');
+		}])->where('username', Auth::user()->username)->first();
+		return view('dashboard')->with('user', $user);
 	}
 
 	public function store()
@@ -37,7 +43,15 @@ class WelcomeController extends Controller {
 			return Redirect::back()->withErrors($validator);
 		}
 
-		return 'success!';
+		$post = new Post([
+			'content' => Input::get('Thought_content'),
+		]);
+
+		$user = Auth::user();
+
+		$user->posts()->save($post);
+
+		return Redirect::back();
 	}
 
 }

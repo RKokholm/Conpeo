@@ -40,7 +40,7 @@ class AuthController extends Controller {
 	{
 		if(Auth::attempt(['email' => Input::get('email'), 'password' => Input::get('password')])){
 			$user = Auth::user();
-			return Redirect::route('home_path');
+			return Redirect::route('profile_path', Auth::user()->username);
 		}
 
 		return Redirect::back()->withInput()->withErrors(['Wrong username and/or password']);

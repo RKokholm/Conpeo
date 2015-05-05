@@ -23,3 +23,4 @@ Route::get('register', ['as' => 'register_path', 'uses' => 'RegisterController@c
 Route::post('register', ['as' => 'register_path', 'uses' => 'RegisterController@store']);
 
 Route::get('/user/{profile}', ['as' => 'profile_path', 'uses' => 'ProfilesController@show']);
+Route::get('/user/{profile}/about', ['as' => 'profile_about_path', 'uses' => 'ProfilesController@about']);
