@@ -15,7 +15,7 @@
 
 			<div class="posts">
 				
-				<ul class="thoughts-profile">
+				<ul class="thoughts">
 
 					@foreach($user->posts as $post)
 

@@ -24,3 +24,5 @@ Route::post('register', ['as' => 'register_path', 'uses' => 'RegisterController@
 
 Route::get('/user/{profile}', ['as' => 'profile_path', 'uses' => 'ProfilesController@show']);
 Route::get('/user/{profile}/about', ['as' => 'profile_about_path', 'uses' => 'ProfilesController@about']);
+Route::get('/user/{profile}/edit', ['as' => 'profile_edit_path', 'uses' => 'ProfilesController@edit']);
+Route::patch('/user/{profile}/update', ['as' => 'profile_update_path', 'uses' => 'ProfilesController@update']);

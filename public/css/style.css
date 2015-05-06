@@ -531,6 +531,25 @@ h6 {
 	word-wrap: break-word;
 }
 
+.wrapper {
+	width: 50%;
+	margin: auto;
+}
+
+.editarea {
+	width: 100%;
+	background: white;
+	border-radius: 5px;
+	height: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	margin: 20px 0px 0px 0px;
+}
+
+.textfield {
+	
+}
+
 /* Media queries
 -------------------------------------------------------------------------------*/
 

@@ -8,6 +8,8 @@ use Auth;
 use App\User;
 use App\Profile;
 use Redirect;
+use Validator;
+use Input;
 
 class ProfilesController extends Controller {
 
@@ -68,9 +70,10 @@ class ProfilesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($user)
 	{
-		//
+		$user = User::with('Profile')->where('username', $user)->first();
+		return view('profile.edit')->with('user', $user);
 	}
 
 	/**
@@ -79,9 +82,27 @@ class ProfilesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($username)
 	{
-		//
+		$user = User::with('Profile')->where('username', $username)->firstOrFail();
+		$inputs = Input::only('bio', 'short', 'location', 'birth_year', 'youtube', 'facebook', 'twitter');
+
+		$validator = Validator::make(Input::all(), [
+			'bio' => 'required',
+			'short' => 'required',
+			'location' => 'required',
+			'birth_year' => 'required',
+			'youtube' => 'required',
+			'facebook' => 'required',
+			'twitter' => 'required',
+		]);
+
+		if($validator->fails()){
+			return Redirect::back()->withInput()->withErrors($validator);
+		}
+
+		$user->profile->fill($inputs)->save();
+		return Redirect::back()->with('success', 'Profile has been updated');
 	}
 
 	/**
@@ -100,5 +121,4 @@ class ProfilesController extends Controller {
 		$user = User::with('Profile')->where('username', $user)->first();
 		return view('profile.about')->with('user', $user);
 	}
-
 }

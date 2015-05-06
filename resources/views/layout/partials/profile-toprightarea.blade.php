@@ -3,9 +3,9 @@
 
 				@if(Auth::check())
 
-					@if(Auth::user()->username = $user->username)
+					@if(Auth::user()->id == $user->id)
 					
-						<div class="edit-profile-btn"><i class="fa fa-cog"></i>Edit profile</div>
+						<a href="{{ URL::route('profile_edit_path', $user->username) }}"><div class="edit-profile-btn"><i class="fa fa-cog"></i>Edit profile</div></a>
 
 					@endif
 

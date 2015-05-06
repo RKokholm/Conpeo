@@ -31,33 +31,37 @@
 
 			</div>
 
-			<ul class="thoughts">
+			<div class="wrapper">
 
-				@foreach($user->posts as $post)
+				<ul class="thoughts">
 
-					<li>
+					@foreach($user->posts as $post)
 
-						<div>
+						<li>
 
-							<div class="post-top">
-								
-								<div class="profile-picture"></div>
-								<a href="{{ URL::route('profile_path', $user->username) }}" class="post-author">{{ $user->first_name }} {{ $user->last_name }}</a>
-								<span class="post-timestamp">{{ $post->created_at->diffForHumans() }}</span>
+							<div>
+
+								<div class="post-top">
+									
+									<div class="profile-picture"></div>
+									<a href="{{ URL::route('profile_path', $user->username) }}" class="post-author">{{ $user->first_name }} {{ $user->last_name }}</a>
+									<span class="post-timestamp">{{ $post->created_at->diffForHumans() }}</span>
+
+								</div>
+
+								<div class="seperator"></div>
+									
+								<span class="thought-content">{!! nl2br(e($post->content)) !!}</span>
 
 							</div>
 
-							<div class="seperator"></div>
-								
-							<span class="thought-content">{!! nl2br(e($post->content)) !!}</span>
+						</li>
 
-						</div>
+					@endforeach
 
-					</li>
+				</ul>
 
-				@endforeach
-
-			</ul>
+			</div>
 			
 		</div>
 
