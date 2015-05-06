@@ -33,7 +33,7 @@
 
 								<div class="seperator"></div>
 									
-								{{ $post->content }}
+								{!! nl2br(e($post->content)) !!}
 
 							</div>
 

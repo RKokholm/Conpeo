@@ -27,10 +27,17 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
+		if (Auth::check()){
+
 		$user = User::with('profile')->with(['posts' => function($sql){
 			$sql->orderBy('created_at', 'desc');
 		}])->where('username', Auth::user()->username)->first();
 		return view('dashboard')->with('user', $user);
+
+		} else {
+			return view('dashboard');
+		}
+		
 	}
 
 	public function store()
